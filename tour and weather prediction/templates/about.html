@@ -1,0 +1,74 @@
+{% block content %}
+
+<!-- Main Content -->
+<main class="bg-light bg-gradient d-flex flex-column align-items-center justify-content-center" style="min-height: 100vh; margin-top: 0; padding-top: 100px;">
+  <h2 class="display-1 text-center" style="margin-top: 20px; color: #007bff;">About Us</h2>
+
+  <div class="card border-primary text-center shadow-lg" style="width: 80%; border-left-width: thick; background-color: #f8f9fa; border-radius: 15px;">
+    <div class="card-body">
+      <img src="{{ url_for('static', filename='logo.svg') }}" class="img-fluid mb-4" alt="About Us" style="border-radius: 15px; width: 50%; height: auto;" />
+
+      <p class="card-text">
+        Welcome to the MapYourTrip Generator, your go-to destination for personalized travel planning and seamless itinerary creation. At MapYourTrip Generator, we understand that every journey is unique, and that's why we're dedicated to providing you with the tools and resources to make your travel experience unforgettable.
+      </p>
+      <p class="card-text">
+        On behalf of our vision to streamline and make travel accessible to budget-conscious travelers like you by making the process simple and easy to navigate. Whether it is a solo, family adventure, or group travel, our platform gives you all that you need to have tailor-made itineraries that combine your interests and taste.
+      </p>
+      <p class="card-text">
+        Modern technology called for fast-tracking of decision making. To help travelers in the process, Travel-Itinerary Generator platform is a step forward. It combines artificial intelligence, data analysis, and user-friendly interfaces to deliver exceptional convenience and efficiency. Every step of your travel, from destination recommendation to real-time updates, budget management, and offline experience, we ensure precaution.
+      </p>
+      <p class="card-text">
+        By being a travel lover at Travel-Itinerary Generator, we guarantee you exciting travels and the most out of every journey. Be our company as we head out on this amazing tour and learn something new about our world!
+      </p>
+      <p class="card-text">
+        Don't let your dream destination remain just that - a dream. Get started with the MapYourTrip Generator tool now. Your dream vacation awaits!
+      </p>
+    </div>
+  </div>
+</main>
+
+<!-- Share Icon -->
+<div class="floating-container">
+  <div class="floating-button" style="background-color: #007bff;">
+    <i class="fa-solid fa-share-from-square" style="color: white;"></i>
+  </div>
+  <!-- Elements -->
+  <div class="element-container">
+    <a class="float-element" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//sanjeev02.pythonanywhere.com/" target="_blank">
+      <span>
+        <i class="fa-brands fa-facebook" style="color: #1877f2;"></i>
+      </span>
+    </a>
+    <a class="float-element" href="https://api.whatsapp.com/send?text=Check%20out%20this%20page:%20https://sanjeev02.pythonanywhere.com" target="_blank">
+      <span>
+        <i class="fa-brands fa-whatsapp" style="color: #25d366;"></i>
+      </span>
+    </a>
+    <a class="float-element" href="https://twitter.com/intent/tweet?text=Check%20out%20this%20page:%20https://sanjeev02.pythonanywhere.com" target="_blank">
+      <span>
+        <i class="fa-brands fa-x-twitter" style="color: #1da1f2;"></i>
+      </span>
+    </a>
+    <a class="float-element" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A//sanjeev02.pythonanywhere.com" target="_blank">
+      <span>
+        <i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i>
+      </span>
+    </a>
+    <a class="float-element" href="https://t.me/share?url=https%3A%2F%2Fsanjeev02.pythonanywhere.com%2F&text=Check%20this%20out" target="_blank">
+      <span>
+        <i class="fa-brands fa-telegram" style="color: #0088cc;"></i>
+      </span>
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="jumbotron text-center text-white fixed-bottom" style="background-color: #030303;">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(255, 255, 255);">
+    <p>&copy; {{ now.year }} Copyright</p>
+    <p>Made With  By <a style="color: #0ed9dd; text-decoration: none;" href="#">Abishek</a></p>
+  </div>
+</footer>
+
+{% endblock %}

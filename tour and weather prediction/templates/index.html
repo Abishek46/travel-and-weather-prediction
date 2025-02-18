@@ -1,0 +1,91 @@
+{% extends "headers.html" %}
+{% block content %}
+    <!-- Main Content -->
+     
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center glow">WingsUp</h1> <!-- Added class 'glow' -->
+          </div>
+        </div>
+
+      <!-- DESCRIPTION: This code block contains a form that allows users to input their boarding point, destination, and date of travel. -->
+      <form action="/" method="POST" class="form-inline">
+        <div class="form-group">
+          <label for="source" class="text-white">From:</label> <!-- Changed color to white -->
+          <input
+            type="text"
+            class="form-control"
+            name="source"
+            id="source"
+            placeholder="Enter your boarding point"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="destination" class="text-white">To:</label> <!-- Changed color to white -->
+          <input
+            type="text"
+            class="form-control"
+            name="destination"
+            id="destination"
+            placeholder="Enter your destination"
+            required
+          />
+        </div>
+        <span class="form-group">
+          <label for="date" class="text-white">Travel Date:</label> <!-- Changed color to white -->
+          <input type="date" class="form-control" name="date" id="date" required/>
+          <label for="return" class="text-white">Return Date:</label> <!-- Changed color to white -->
+          <input type="date" class="form-control" name="return" id="return" required/>
+        </span>
+
+        <button style="margin-top: 5px; padding: 4px;" type="submit" class="btn btn-primary">Submit</button>
+
+        <div class="container d-flex justify-content-center align-items-center">
+          <div class="text-center">
+            <img id="loading" style="display: none;" src="{{url_for('static',filename='loading.gif')}}" alt="Loading..." />
+          </div>
+        </div>
+      </form>
+    </main>
+
+  
+      
+   
+
+    <!-- Footer -->
+    <footer
+      class="jumbotron text-center text-white fixed-bottom"
+      
+    >
+      <!-- Copyright -->
+      <div
+        class="text-center p-1"
+        style="background-color: black; font-size: 8px; max-width: fill; margin: 0 auto;"
+      >
+       
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      /* Custom styles for glowing text */
+      .glow {
+          color: white; /* White color for text */
+          text-shadow: 0 0 5px skyblue, 0 0 10px skyblue, 0 0 15px skyblue; /* Glowing effect */
+      }
+      
+      /* Additional styles for labels */
+      label {
+          color: white; /* White color for labels */
+      }
+    </style>
+
+{% endblock %}

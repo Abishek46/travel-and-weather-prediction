@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Register Page</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center; /* Vertically center */
+      justify-content: center; /* Horizontally center */
+    }
+
+    .bg-image-wrap {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      background-image: url('your-image-url.jpg'); /* Replace with your image URL */
+      background-size: cover; /* Make the image cover the whole page */
+      background-position: center center; /* Center the image */
+      background-attachment: fixed; /* Optional: to make the background image fixed when scrolling */
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+      color: #fff; /* White color for all text */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for visibility */
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh; /* Ensures full height */
+    }
+
+    h2 {
+      font-size: 3rem; /* Increase font size */
+      font-weight: bold; /* Make it bold */
+      color: #117511; /* Dark green */
+    }
+
+    .form-control {
+      border: 2px solid #006400; /* Dark green border color */
+      border-radius: 5px;
+      width: 100%;
+      max-width: 350px; /* Limit the width */
+    }
+
+    .btn-register {
+      background-color: #228b22; /* Forest green color */
+      border: none;
+      color: #fff; /* White text */
+    }
+
+    .btn-register:hover {
+      background-color: #006400; /* Dark green on hover */
+    }
+
+    .login-link {
+      color: #fff; /* White color for 'Have already an account?' text */
+      font-weight: bold;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Slight shadow for readability */
+    }
+
+    .login-text {
+      color: #1eac1e; /* Green color for 'Login here' */
+    }
+
+    .login-text:hover {
+      color: #416541; /* Darker green on hover */
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Image Background -->
+  <div class="bg-image-wrap">
+    <!-- Section: Design Block -->
+    <section class="text">
+      <div>
+        <h2 class="fw-bold mb-5">Register</h2>
+        <form action="/register" method="POST">
+          <!-- Flash Messages Container -->
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+          <div>
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% endwith %}
+          <!-- Name input -->
+          <div class="mb-4">
+            <input type="text" id="form3Example1" class="form-control" placeholder="Name" name="name" required />
+          </div>
+          <!-- Email input -->
+          <div class="mb-4">
+            <input type="email" id="form3Example3" class="form-control" placeholder="Email address" name="email" required />
+          </div>
+
+          <!-- Password input -->
+          <div class="mb-4">
+            <input type="password" id="form3Example4" class="form-control" placeholder="Password" name="password" required />
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="py-3 mb-4">
+            <input type="password" id="form3Example5" class="form-control" placeholder="Confirm Password" name="password2"
+              required />
+          </div>
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-register btn-block mb-4">Register</button>
+          <!-- Register link -->
+          <p class="text-center login-link mt-5 mb-0">
+            Have already an account? <a href="/login" class="login-text">Login here</a>
+          </p>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Automatically hide flash messages after 5 seconds
+    setTimeout(function () {
+      document.querySelectorAll(".alert").forEach(function (alert) {
+        alert.style.display = "none";
+      });
+    }, 5000); // Flash messages will disappear after 5 seconds (5000 milliseconds)
+  </script>
+</body>
+
+</html>
